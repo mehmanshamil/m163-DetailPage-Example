@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/detail.css">
+</head>
+
+<body>
+    <main>
+        <section>
+            <div id="prize">
+                <img class="order" src="https://cliply.co/wp-content/uploads/2019/08/371908020_CONFETTI_400px.gif"
+                    alt="">
+
+            </div>
+            <div class="container">
+
+
+            </div>
+
+        </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+
+        const getLoad = () => {
+            let params = new URLSearchParams(window.location.search)
+            let pathId = params.get("productId")
+            console.log("productin idisi " + pathId);
+            getApi(pathId)
+        }
+        const getApi = async (id) => {
+            try {
+                const {data} = await axios.get(`https://fakestoreapi.com/products/${id}`)
+                    let item = data
+                let container = document.querySelector(".container")
+                container.innerHTML = `
+                     <div class="image">
+                    <img src="${item.image}" alt="">
+                </div>
+                <div class="dataInformation">
+                    <h2>${item.title}</h2>
+                    <div class="data">
+                        <h4>Category : ${item.category}</h4>
+                        <span>Raiting : ${item.rating.rate}</span>
+                        <p>${item.description}</p>
+                        <span><b>Price : </b> ${item.price}$</span>
+
+                    </div>
+                    <button onclick="getorder()" id="orderBtn">Sifaris edin</button>
+                </div>
+                    `
+            } catch (error) {
+                console.log(error);
+
+            }
+        }
+
+        window.onload = () => {
+            getLoad()
+        }
+
+
+        function getorder() {
+            let prize = document.getElementById('prize')
+            prize.style.display = "flex"
+
+            setTimeout(() => {
+                prize.style.display = "none"
+            }, 2000)
+
+
+        }
+    </script>
+
+</body>
+
+</html>
