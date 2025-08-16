@@ -1,27 +1,35 @@
-body{
+body {
     background-color: black;
     color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh ;
 }
-.container{
+
+.container {
     margin: 0 auto;
     width: 80%;
     display: flex;
     gap: 1rem;
-    .image{
+
+    .image {
         width: 40%;
-        
-        img{
+
+        img {
             object-fit: cover;
             border-radius: 10px;
             width: 100%;
         }
     }
-    .dataInformation{
+
+    .dataInformation {
         width: 50%;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        button{
+
+        button {
             background-color: green;
             padding: 10px;
             width: 50%;
@@ -30,7 +38,8 @@ body{
             border-radius: 7px;
             cursor: pointer;
             border: 1px solid green;
-            &:hover{
+
+            &:hover {
                 background-color: #fff;
                 color: green;
 
@@ -39,21 +48,47 @@ body{
     }
 
 }
-main{
+
+main {
     position: relative;
     display: flex;
     justify-content: center;
+    padding: 1rem;
 }
-.order{
+
+.order {
     position: absolute;
     /* left: 10rem; */
     width: 20rem;
     height: 20rem;
     border-radius: 50%;
 }
-#prize{
+
+#prize {
     position: relative;
     width: 100%;
     display: none;
     justify-content: center;
+}
+
+.otherPage , footer{
+    background-color: white !important;
+
+    a,
+    .logo h1 , p{
+        color: black !important;
+
+    }
+
+    a {
+        font-size: 1.3rem;
+        transition: .5s;
+
+        &:hover {
+            font-weight: 700;
+            color: red !important;
+        }
+
+    }
+
 }

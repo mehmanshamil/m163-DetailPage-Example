@@ -5,10 +5,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="../css/style.css">
+
     <link rel="stylesheet" href="../css/detail.css">
+
 </head>
 
 <body>
+    <header class="otherPage">
+        <div class="containerHead ">
+            <div class="logo">
+                <h1>LOGO</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="./index.html">Home</a></li>
+                    <li><a href="./search.html">Search</a></li>
+                    <li><a href="">item3</a></li>
+                    <li><a href="">item4</a></li>
+                    <li><a href="">item5</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
     <main>
         <section>
             <div id="prize">
@@ -24,6 +43,14 @@
         </section>
     </main>
 
+    <footer>
+        <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sunt quam neque porro tenetur iste perspiciatis
+            saepe deleniti. Consequatur, doloremque deserunt, esse ab voluptas, ad modi alias excepturi perferendis nam
+            quo.
+        </p>
+    </footer>
+
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script>
 
@@ -35,8 +62,8 @@
         }
         const getApi = async (id) => {
             try {
-                const {data} = await axios.get(`https://fakestoreapi.com/products/${id}`)
-                    let item = data
+                const { data } = await axios.get(`https://fakestoreapi.com/products/${id}`)
+                let item = data
                 let container = document.querySelector(".container")
                 container.innerHTML = `
                      <div class="image">
@@ -76,6 +103,7 @@
 
         }
     </script>
+
 
 </body>
 

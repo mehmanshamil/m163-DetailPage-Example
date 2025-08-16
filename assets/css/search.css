@@ -1,0 +1,72 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+}
+
+form {
+    width: 20rem;
+    margin: 1rem auto;
+    text-align: center;
+
+    input {
+        /* background-color: red; */
+        width: 100%;
+        padding: 1rem;
+        border: none;
+        font-size: 1.2rem;
+        outline: none;
+        border-bottom: 1px solid black;
+    }
+
+    input::placeholder {
+        color: red;
+        font-size: 1.2rem;
+        animation: 3s animationPlace ease forwards;
+    }
+}
+
+.searcSec {
+    /* height: 600px; */
+
+}
+
+@keyframes animationPlace {
+    from {
+        transform: translateX(-100px);
+    }
+
+    to {
+        transform: translateX(0px);
+    }
+}
+
+.error {
+    color: red;
+    font-size: 2rem;
+    text-align: center;
+
+
+}
+
+.filterBtns button {
+    padding: 10px;
+    background-color: black;
+    border: 1px solid black;
+    transition: .5s;
+    color: #fff;
+    border-radius: 10px;
+    cursor: pointer;
+
+    &:hover {
+        background-color: #fff;
+        color: black;
+        
+    }
+}
+.filterBtns{
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}

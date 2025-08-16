@@ -1,6 +1,8 @@
 
 
 async function getApi() {
+    console.log("salam");
+
     try {
         let { data } = await axios.get("https://fakestoreapi.com/products")
         let container = document.querySelector(".container")
@@ -31,6 +33,7 @@ async function getApi() {
 
 getApi()
 
-function getDetail(id){
-    window.location.href=`./productDetail.html?productId=${id}`
+function getDetail(id) {
+    window.location.href = `./productDetail.html?productId=${id}`
 }
+
